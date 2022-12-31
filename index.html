@@ -31,9 +31,6 @@
       .coll2{
          border: 2px solid #1a73e8;
         }
-        .container{
-          max-width: 730px;
-        }
         .csstext{
           font-family: Google Sans,Roboto,Helvetica,sans-serif;
           font-size: 18px;
@@ -44,11 +41,22 @@
           font-size: 25px;
           visibility:visible;
          }
+         .container{
+           max-width: 750px;
+         }
         .btn{
           font-size: 14px;
           cursor: pointer;
         }
-
+       .form-text{
+         color:#5e5e5e;
+       }
+       .progress{
+         border-radius: 15px;
+       }
+       .progressbar{
+         margin-left:250px;
+       }
     </style>
   </head>
   <body>
@@ -65,14 +73,22 @@
    </nav>
 
      <div class="container">
+       <div class="progressbar">
+         <div class="progress mt-3" style="height:10px; width:150px;">
+              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+         </div>
+       </div>
+
        <div class="form-etap">
          <h3 class="mt-3 text-center">C'est parti ! Quel est le nom de votre entreprise ?</h3>
          <div class="align-items-center">
-           <input class="form-control" id="name" type="text" placeholder="Nom de votre établissement"/>
-           <div class="form-text">We'll never share your email with anyone else.</div>
+           <div class="form-outline mt-4">
+                 <input class="form-control" type="text" placeholder="Nom de votre établissement"/>
+          </div>
+           <div class="form-text"><small>We'll never share your email with anyone else.</small></div>
          </div>
        </div>
-       <div class="form_etap">
+       <div class="form_etap d-none">
          <h3 class="mt-3 text-center">Quel est votre principal objectif publicitaire ?</h3>
          <section class="mt-5">
            <div class="coll col-12 step">
@@ -92,8 +108,27 @@
 
          <hr>
          <button class="btn btn-primary" type="button" name="button" style="float:right">Suivant</button>
-         <button class="btn btn-primary" type="button" name="button">Roteur</button>
+         <button class="btn btn-primary" type="button" name="button">Retour</button>
+         <br>
+
      </div>
+
+     <footer class="mt-5">
+        <div class="container">
+          <div class="figure">
+            <div class="row">
+              <div class="col-lg-2">
+                <img class="float-left" src="images/help.png" alt=""style="width:100px;">
+              </div>
+              <div class="col-lg-8">
+                   <h6>Besoin d'aide ?</h6>
+                   <p>Afin de bénéficier d'une assistance gratuite pour la configuration de vos annonces, appelez le <strong>0698204123</strong> Du dimanche au jeudi, de 7h à 15h</p>
+                   <a href="#">Autres options d'aide</a>
+              </div>
+            </div>
+          </div>
+        </div>
+     </footer>
      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
      <script type="text/javascript">
      /* jquery*/
