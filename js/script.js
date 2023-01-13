@@ -2,6 +2,8 @@ let stepform =document.getElementsByClassName('form_etap');
 let nextBtn = document.getElementById('next-btn');
 let prevBtn = document.getElementById('prev');
 let terminerBtn = document.getElementById('terminer-btn');
+let preloader = document.getElementById('preloader');
+let bodyElement = document.querySelector('body');
 let succcessDiv = document.getElementById('success');
 
 
@@ -66,14 +68,16 @@ progress((100 / stepCount) * current_step);
 });
 
 terminerBtn.addEventListener('click', ()=>{
-
-  stepform[stepCount].classList.remove('d-block');
-  stepform[stepCount].classList.add('d-none');
-  prevBtn.classList.remove('d-block');
-  prevBtn.classList.add('d-none');
-  terminerBtn.classList.remove('d-block');
-  terminerBtn.classList.add('d-none');
-  succcessDiv.classList.remove('d-none');
-  succcessDiv.classList.add('d-block');
-
+  preloader.classList.add('d-block');
+    timer(300)
+        .then(() => {
+           stepform[stepCount].classList.remove('d-block');
+           stepform[stepCount].classList.add('d-none');
+           prevBtn.classList.remove('d-block');
+           prevBtn.classList.add('d-none');
+           terminerBtn.classList.remove('d-block');
+           terminerBtn.classList.add('d-none');
+           succcessDiv.classList.remove('d-none');
+           succcessDiv.classList.add('d-block');
+         })
 });
