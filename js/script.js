@@ -69,8 +69,11 @@ progress((100 / stepCount) * current_step);
 
 terminerBtn.addEventListener('click', ()=>{
   preloader.classList.add('d-block');
-    timer(300)
+  const timer = ms => new Promise(res => setTimeout(res, ms));
+    timer(2000)
         .then(() => {
+          bodyElement.classList.add('loaded');
+
            stepform[stepCount].classList.remove('d-block');
            stepform[stepCount].classList.add('d-none');
            prevBtn.classList.remove('d-block');

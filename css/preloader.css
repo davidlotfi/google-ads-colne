@@ -45,3 +45,8 @@
     transform: rotate(360deg);
   }
 }
+.loaded #preloader {
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.3s 1s ease-out;
+}
